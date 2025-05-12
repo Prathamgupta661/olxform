@@ -9,14 +9,28 @@ const PhotoUploadGrid = () => {
     setImages(updatedImages);
   };
 
+  const handleDeleteImage = (index) => {
+    const updatedImages = images.filter((_, i) => i !== index);
+    setImages(updatedImages);
+  };
+
   const renderImageSlot = (index) => {
     if (images[index]) {
       return (
-        <img
-          src={URL.createObjectURL(images[index])}
-          alt={`preview-${index}`}
-          className="w-full h-full object-cover"
-        />
+        <div className="relative w-full h-full">
+          <img
+            ondr
+            src={URL.createObjectURL(images[index])}
+            alt={`preview-${index}`}
+            className="w-full h-full object-cover"
+          />
+          <button
+            className="absolute top-1 right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs"
+            onClick={() => handleDeleteImage(index)}
+          >
+            ×
+          </button>
+        </div>
       );
     } else if (index === images.length) {
       return (
@@ -26,6 +40,7 @@ const PhotoUploadGrid = () => {
             type="file"
             accept="image/*"
             className="hidden"
+            multiple
             onChange={handleFileChange}
           />
         </label>
