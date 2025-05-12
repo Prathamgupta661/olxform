@@ -72,6 +72,7 @@ export default function PropertyForm() {
             name=""
             id=""
             className="border border-black mr-[35%] px-[12px] h-[48px] font-[16px]"
+            required
           />
         </div>
         <div className="mb-4 flex flex-col">
@@ -83,6 +84,7 @@ export default function PropertyForm() {
             name=""
             id=""
             className="border border-black mr-[35%] px-[12px] h-[48px] font-[16px]"
+            required
           />
         </div>
         <div className="mb-4 flex flex-col">
@@ -94,6 +96,7 @@ export default function PropertyForm() {
             name=""
             id=""
             className="border border-black mr-[35%] px-[12px] h-[48px] font-[16px]"
+            required
           />
         </div>
         <div className="mb-4 flex flex-col">
@@ -106,6 +109,7 @@ export default function PropertyForm() {
             name=""
             id=""
             className="border border-black mr-[35%] px-[12px] h-[48px] font-[16px]"
+            required
           />
         </div>
         <div className="mb-4 flex flex-col">
@@ -118,6 +122,7 @@ export default function PropertyForm() {
             name=""
             id=""
             className="border border-black mr-[35%] px-[12px] h-[48px] font-[16px]"
+            required
           />
         </div>
         {renderOptions("carparking", "Car Parking", options.carparking)}
@@ -127,7 +132,7 @@ export default function PropertyForm() {
                 Facing
             </label>
         </div>
-        <select name="" id="" className="border border-black w-[70%] py-[10px] px-[12px] h-[48px] font-[16px]">
+        <select name="" id="" className="border border-black w-[70%] py-[10px] px-[12px] h-[48px] font-[16px]" required>
             <option value="">Select a value</option>
             <option value="East">East</option>
             <option value="West">West</option>
@@ -139,6 +144,12 @@ export default function PropertyForm() {
             <option value="South-West">South-West</option>
         </select>
         <PhotoUploadGrid/>
+        <button
+          type="submit"
+          className="mt-4 px-6 py-2 bg-blue-500 text-white rounded"
+        >
+          POST
+        </button>
       </div>
     </div>
   );
